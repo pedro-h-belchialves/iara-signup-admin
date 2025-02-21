@@ -1,7 +1,7 @@
 "use client";
 
 import { createNewUserAction } from "@/actions/create-new-user";
-import { useActionState, useEffect } from "react";
+import { useActionState, useEffect, useState } from "react";
 
 export const initialState = {
   success: false,
@@ -9,6 +9,7 @@ export const initialState = {
 };
 
 export const Form = () => {
+  const [message, setMessage] = useState("");
   const [formState, formAction] = useActionState(
     createNewUserAction,
     initialState
@@ -16,9 +17,9 @@ export const Form = () => {
 
   useEffect(() => {
     if (formState.success) {
-      alert("Usuário criado com sucesso");
+      setMessage("Usuário criado com sucesso!");
     } else if (formState.errorMessage) {
-      alert(formState.errorMessage);
+      setMessage(formState.errorMessage);
     }
   }, [formState]);
   return (
@@ -58,6 +59,15 @@ export const Form = () => {
       >
         Criar nova conta
       </button>
+      {message && (
+        <p
+          className={`${
+            message.includes("sucesso") ? "text-green-500" : "text-red-500"
+          }`}
+        >
+          {message}
+        </p>
+      )}
     </form>
   );
 };

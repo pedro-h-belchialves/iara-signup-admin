@@ -12,8 +12,6 @@ export const createNewUserAction = async (
   );
 
   const entries = Object.fromEntries(formData.entries());
-
-  //   console.log(entries);
   console.log(formData);
 
   const response = await fetch("https://iara-api.odonto5v.com.br/users", {
@@ -23,7 +21,6 @@ export const createNewUserAction = async (
   });
 
   if (!response.ok) {
-    // console.log(response);
     return {
       success: false,
       errorMessage:
@@ -37,9 +34,4 @@ export const createNewUserAction = async (
   return {
     success: true,
   };
-
-  //   const data = await response.json();
-  //   return data;
 };
-
-//35999196082
