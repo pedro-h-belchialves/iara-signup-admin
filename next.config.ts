@@ -1,7 +1,14 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  experimental: {
+    serverActions: {
+      allowedOrigins: [
+        "iara-api.odonto5v.com.br",
+        "iara-signup-admin.vercel.app",
+      ],
+    },
+  },
 };
 
 export default nextConfig;
