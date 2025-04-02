@@ -8,7 +8,7 @@ export const createNewUserAction = async (
   headers.append("Content-Type", "application/json");
   headers.append(
     "authorization",
-    "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50SWQiOiJiYTBhOTg1OS05NzA5LTRjNDQtOWRkYS1lMGJlMzhlYjhhYzQiLCJpYXQiOjE3NDA0MzU2NDYsImV4cCI6MTc0MzAyNzY0Nn0.nSoBjkOUDZziGKRH37fU-8PrEG0ZVTCxh71sd0wqScY"
+    "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50SWQiOiJjNDQ4MGUyMS04MjVkLTQ5NjctYjEzOS05OTE4M2IzZWRhN2QiLCJpYXQiOjE3NDM2MDM5MzEsImV4cCI6MTc0NjE5NTkzMX0.zYa0cJiYDfsY8I5Oedz089flYedrjlgFxYtAIAvbsOY"
   );
 
   const entries = Object.fromEntries(formData.entries());
