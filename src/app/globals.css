@@ -2,20 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #000;
-  --foreground: #fff;
+/* .input {
+  @apply h-[52px] rounded-xl bg-neutral-content text-sm font-normal outline-none focus:border-primary-content focus:bg-base-content focus:outline-none;
+} */
+
+/* .input:disabled {
+  @apply h-[52px] rounded-xl bg-neutral-content text-accent opacity-50 outline-none focus:border-primary-content focus:bg-base-content focus:outline-none;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #f3f3f3;
-    --foreground: #000;
-  }
+.input-bordered {
+  @apply border border-accent-content/20;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
+.input-error {
+  @apply border-error bg-red-50;
+} */
