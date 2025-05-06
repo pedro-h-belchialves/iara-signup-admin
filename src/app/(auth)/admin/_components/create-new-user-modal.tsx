@@ -49,12 +49,12 @@ const CreateUserModal = () => {
 
   return (
     <>
-      <Button
+      <button
         onClick={() => setOpen(true)}
-        className=" w-fit px-10 whitespace-nowrap"
+        className="  h-20 w-20 rounded-full text-6xl font-light text-white fixed right-[3%] bottom-[15%] whitespace-nowrap bg-primary"
       >
-        + Novo usuario
-      </Button>
+        +
+      </button>
       <div
         className={`fixed left-0 top-0 z-50 flex h-full w-full items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm ${
           open ? "visible" : "hidden"
