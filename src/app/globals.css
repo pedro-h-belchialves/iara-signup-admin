@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+
+label {
+  @apply text-gray-700 text-sm;
+}
+
 /* .input {
   @apply h-[52px] rounded-xl bg-neutral-content text-sm font-normal outline-none focus:border-primary-content focus:bg-base-content focus:outline-none;
 } */

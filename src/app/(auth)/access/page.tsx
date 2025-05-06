@@ -1,27 +1,20 @@
-import { UserList } from "./_components/user-list";
-import { exemple } from "./exemple";
-import { CreateUserModal } from "./_components/create-new-user-modal";
 import { Button } from "@/components/ux/button";
 import { LinkIcon } from "@/components/icons/link";
 
-const AdminPage = () => {
-  const user = exemple;
+const AccessPage = () => {
   return (
     <div className="h-full w-full bg-white  flex flex-col gap-10">
       <div className="flex justify-between  ">
-        <h1 className="text-2xl font-semibold w-fit  ">Controle de usuários</h1>
+        <h1 className="text-2xl font-semibold w-fit  ">Controle de acesso</h1>
         <div className="flex gap-4 w-fit">
-          <CreateUserModal />
           <Button className="w-fit px-10 bg-success">
             <LinkIcon className="h-5 w-5" />
-            Gerar link de signup
+            Gerar link de acesso
           </Button>
         </div>
       </div>
-
-      <UserList users={[user]} />
     </div>
   );
 };
 
-export default AdminPage;
+export default AccessPage;

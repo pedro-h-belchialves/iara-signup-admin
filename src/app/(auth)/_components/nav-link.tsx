@@ -1,5 +1,6 @@
 "use client";
 
+import { cn } from "@/utils/cn";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -12,13 +13,15 @@ interface NavLinkProps {
 export const NavLink = ({ link, icon, title }: NavLinkProps) => {
   const pathname = usePathname();
 
-  // Constrói o caminho absoluto combinando o caminho atual com o link relativo
-  const resolvedPath = `${pathname}/${link}`.replace(/\/+/g, "/");
+  const resolvedPath = `${link}`.replace(/\/+/g, "/");
 
   return (
     <Link
       href={resolvedPath}
-      className="link link-hover bg-primary/10 py-2 flex justify-center items-center gap-2 text-primary rounded-lg w-full "
+      className={cn(
+        "link link-hover  py-2 flex justify-center items-center gap-2 text-accent rounded-lg w-full",
+        pathname === link ? "bg-primary/10 text-primary" : ""
+      )}
     >
       {icon}
       {title || link}
