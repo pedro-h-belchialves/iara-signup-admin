@@ -1,42 +1,37 @@
 "use client";
 
+import { createNewUserAction } from "@/actions/create-new-user";
 import { Button } from "@/components/ux/button";
 import { Input } from "@/components/ux/input";
-import { useEffect, useState } from "react";
+import { useActionState, useEffect, useState } from "react";
 
-// const initialState = {
-//   success: false,
-//   errorMessage: "",
-//   errors: {
-//     email: "",
-//   },
-// };
+const initialState = {
+  success: false,
+  errorMessage: "",
+};
 
 const CreateUserModal = () => {
   const [open, setOpen] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [success, setSuccess] = useState(false);
 
-  //   const [fromState, fromAction] = useActionState(
-  //     startRecoveryPasswordTokenAction,
-  //     initialState
-  //   );
+  const [fromState, fromAction] = useActionState(
+    createNewUserAction,
+    initialState
+  );
 
-  // useEffect(() => {
-  //   if (fromState?.errorMessage) {
-  //     setErrorMessage(fromState.errorMessage);
-  //   }
-  //   if (fromState?.errors?.email) {
-  //     setErrorMessage(fromState.errors.email);
-  //   }
-  //   if (fromState?.success) {
-  //     setSuccess(true);
-  //     setTimeout(() => {
-  //       setOpen(false);
-  //       setSuccess(false);
-  //     }, 5000);
-  //   }
-  // }, [fromState])
+  useEffect(() => {
+    if (fromState?.errorMessage) {
+      setErrorMessage(fromState.errorMessage);
+    }
+    if (fromState?.success) {
+      setSuccess(true);
+      setTimeout(() => {
+        setOpen(false);
+        setSuccess(false);
+      }, 5000);
+    }
+  }, [fromState]);
 
   useEffect(() => {
     if (success) {
@@ -82,9 +77,11 @@ const CreateUserModal = () => {
           {!success ? (
             <>
               <form
-                // action={fromAction}
+                action={fromAction}
                 className="flex w-full flex-col items-center gap-5"
               >
+                <input type="hidden" name="password" value="@Sucesso1@" />
+                <input type="hidden" name="notify_webhook_url" value="any" />
                 <div className="flex w-full flex-col gap-1">
                   <label htmlFor="name">Nome do usuário</label>
                   <Input
@@ -94,18 +91,18 @@ const CreateUserModal = () => {
                   />
                 </div>
                 <div className="flex w-full flex-col gap-1">
-                  <label htmlFor="name">Email do usuário</label>
+                  <label htmlFor="email">Email do usuário</label>
                   <Input
-                    autoComplete="name"
-                    name="name"
+                    autoComplete="email"
+                    name="email"
                     className={`w-full ${errorMessage ? "input-error" : ""}`}
                   />
                 </div>
                 <div className="flex w-full flex-col gap-1">
-                  <label htmlFor="name">Telefone do usuário</label>
+                  <label htmlFor="phone">Telefone do usuário</label>
                   <Input
-                    autoComplete="name"
-                    name="name"
+                    autoComplete="phone"
+                    name="phone"
                     className={`w-full ${errorMessage ? "input-error" : ""}`}
                   />
                 </div>

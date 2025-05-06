@@ -16,6 +16,7 @@ const eslintConfig = [
       "@next/next/no-html-link-for-pages": "off",
       "@typescript-eslint/no-explicit-any": "off",
       "react/display-name": "off",
+      "no-implicit-any": "off",
     },
   },
 ];
