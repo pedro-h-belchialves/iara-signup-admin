@@ -2,6 +2,7 @@ import { LogoIcon } from "@/components/icons/logo";
 import { NavLink } from "./nav-link";
 import { UsersIcon } from "@/components/icons/users";
 import { ArrowRightIcon } from "@/components/icons/arrow-right";
+import { LogoutButton } from "./logout-button";
 
 export const Sidebar = () => {
   return (
@@ -21,9 +22,7 @@ export const Sidebar = () => {
       </div>
       <div>
         {/* <h1>Name</h1> */}
-        <button className="btn btn-primary flex justify-center items-center gap-2">
-          sair <ArrowRightIcon className="h-5 w-5" />
-        </button>
+        <LogoutButton />
       </div>
     </div>
   );
