@@ -2,7 +2,10 @@ import { IUser } from "@/types/user";
 
 export const UserItem = ({ user }: { user: IUser }) => {
   return (
-    <div className=" gap-4 w-full bg-neutral-content text-sm  border border-base rounded-lg grid grid-cols-8  py-2  px-10 ">
+    <a
+      href={`/user/${user.id}`}
+      className=" gap-4 w-full bg-neutral-content text-sm  border border-base rounded-lg grid grid-cols-8  py-2  px-10 "
+    >
       <span className="col-span-2 h-10 flex items-center">{user.name}</span>
       <span className="col-span-2  h-10 flex items-center">{user.email}</span>
       <span className="col-span-2  h-10 flex items-center">
@@ -18,6 +21,6 @@ export const UserItem = ({ user }: { user: IUser }) => {
           </span>
         )}
       </div>
-    </div>
+    </a>
   );
 };
